@@ -260,6 +260,8 @@
 <script>
 const idRestaurantMenu = localStorage.getItem("id_restaurant_menu");
 
+const idCommand = localStorage.getItem("idCommand");
+
 export default {
     data() {
         return {
@@ -273,7 +275,7 @@ export default {
             priceOrdered: "",
             totalOrdered: "",
             message: "",
-            id_command: 0,
+            id_command: idCommand,
             status: "En cours",
         };
     },
@@ -310,6 +312,9 @@ export default {
     },
     methods: {
         async ordered() {
+            this.id_command++;
+            localStorage.setItem("idCommand", this.id_command);
+
             for (let i in this.command) {
                 this.nameOrdered = this.command[i].name;
                 this.priceOrdered = this.command[i].price;

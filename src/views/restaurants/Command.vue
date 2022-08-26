@@ -1,22 +1,12 @@
 <template>
-  <div
-    class="min-h-screen bg-black bg-no-repeat bg-center bg-cover"
-    style="
-      background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
-    <h1 class="text-red-600 text-2xl">Commandes des clients</h1>
+  <h1>Commandes des clients</h1>
 
-    <div
-      v-for="(elem, key) in ordered"
-      :key="elem.id"
-      class="text-gray-100 font-black"
-    >
-      <p>{{ elem.name }}</p>
-      <p>{{ elem.price }}</p>
-      <p>{{ elem.total }}</p>
-      <button @click="erase(key)">Supprimer</button>
-    </div>
+  <div v-for="(elem, key) in ordered" :key="elem.id">
+    <p>{{ elem.name }}</p>
+    <p>Prix du plat : {{ elem.price }}</p>
+    <p>Total : {{ elem.total }}</p>
+    <p>Numéro de commande : {{ elem.id_command }}</p>
+    <button @click="erase(key)">Supprimer</button>
   </div>
 </template>
 
