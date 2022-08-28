@@ -130,29 +130,28 @@
                   </tr>
                 </thead>
                 <tbody v-for="task in tasks" :key="task.id">
-                  <div v-if="task.category === 'entree'">
-                    <tr
-                      class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  <tr
+                    v-if="task.category === 'entree'"
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  >
+                    <td
+                      scope="row"
+                      class="py-4 px-6 font-medium text-red-600 whitespace-nowrap dark:text-white"
                     >
-                      <th
-                        scope="row"
-                        class="py-4 px-6 font-medium text-red-600 whitespace-nowrap dark:text-white"
+                      {{ task.category }}
+                    </td>
+                    <td class="py-4 px-6 text-red-600">{{ task.name }}</td>
+                    <td class="py-4 px-6">{{ task.priceHt }} €</td>
+                    <td class="py-4 px-6">{{ task.tva }} %</td>
+                    <td class="py-4 px-6">{{ task.priceTtc }} €</td>
+                    <td class="py-4 px-6 text-right">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Edit</a
                       >
-                        {{ task.category }}
-                      </th>
-                      <td class="py-4 px-6 text-red-600">{{ task.name }}</td>
-                      <td class="py-4 px-6">{{ task.priceHt }} €</td>
-                      <td class="py-4 px-6">{{ task.tva }} %</td>
-                      <td class="py-4 px-6">{{ task.priceTtc }} €</td>
-                      <td class="py-4 px-6 text-right">
-                        <a
-                          href="#"
-                          class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                          >Edit</a
-                        >
-                      </td>
-                    </tr>
-                  </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
