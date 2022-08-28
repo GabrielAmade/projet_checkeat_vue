@@ -18,7 +18,7 @@
               Tableau de bord
             </h1>
             <button
-              class="font-bold text-lg focus:ring-2 focus:ring-offset-2 focus:ring-red-600 inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-red-700 hover:bg-red-600 focus:outline-none rounded"
+              class="font-bold text-lg focus:ring-2 focus:ring-offset-2 focus:ring-red-600 inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-red-600 hover:bg-red-700 focus:outline-none rounded"
             >
               <a href="http://localhost:8080/restaurants/create"
                 >+ Ajouter un restaurant</a
@@ -31,25 +31,126 @@
           <ul>
             <li v-for="elem in liste" :key="elem.id">
               <div
-                class="flex mb-2 flex-col-reverse lg:flex-row w-full bg-white dark:bg-gray-800 shadow rounded"
+                class="flex mb-2 flex-col-reverse lg:flex-row w-full bg-white dark:bg-black shadow rounded"
               >
                 <div class="w-full lg:w-1/2">
                   <div
                     class="pt-4 lg:pt-6 pb-4 lg:pb-6 pl-4 lg:pl-6 pr-4 lg:pr-6"
                   >
                     <div class="pb-4">
-                      <p class="text-sm text-gray-100 flex items-center">
-                        <svg
-                          class="fill-current text-red-500 w-3 h-3 mr-2"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z"
-                          />
-                        </svg>
-                        Espace membre
-                      </p>
+                      <div class="flex justify-between">
+                        <p class="text-sm text-gray-100 flex items-center">
+                          <svg
+                            class="fill-current text-red-500 w-3 h-3 mr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z"
+                            />
+                          </svg>
+                          Espace membre
+                        </p>
+
+                        <div class="flex items-center justify-center">
+                          <div class="relative inline-block text-left dropdown">
+                            <span class="rounded-md shadow-sm"
+                              ><button
+                                class="inline-flex justify-center px-4 py-2 text-sm font-black leading-5 text-red-600 transition duration-150 ease-in-out bg-black rounded-md hover:text-black focus:outline-none hover:bg-red-600 active:bg-gray-50 active:text-gray-800"
+                                type="button"
+                                aria-haspopup="true"
+                                aria-expanded="true"
+                                aria-controls="headlessui-menu-items-117"
+                              >
+                                <span>Options</span>
+                                <svg
+                                  class="w-5 h-5 ml-2 -mr-1"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"
+                                  ></path>
+                                </svg></button
+                            ></span>
+                            <div
+                              class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95"
+                            >
+                              <div
+                                class="absolute right-0 w-56 mt-2 origin-top-right bg-black border border-red-600 rounded-md shadow-lg outline-none"
+                                aria-labelledby="headlessui-menu-button-1"
+                                id="headlessui-menu-items-117"
+                                role="menu"
+                              >
+                                <div class="py-1">
+                                  <button
+                                    tabindex="0"
+                                    class="text-red-600 block cursor-pointer w-full px-4 py-2 text-sm leading-5 text-left hover:text-black hover:bg-red-600"
+                                    role="menuitem"
+                                    @click="editProfil(elem.id)"
+                                  >
+                                    <svg
+                                      class="inline-block fill-current h-4 w-4"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      style="vertical-align: -0.125em"
+                                      width="1em"
+                                      height="1em"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <g
+                                        fill="none"
+                                        stroke="#dc2626"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                      >
+                                        <path
+                                          d="m16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621Z"
+                                        />
+                                        <path
+                                          d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"
+                                        />
+                                      </g>
+                                    </svg>
+                                    <span class="inline-block pl-2"
+                                      >Modifier</span
+                                    >
+                                  </button>
+                                </div>
+                                <div class="py-1">
+                                  <button
+                                    tabindex="3"
+                                    class="text-red-600 block cursor-pointer w-full px-4 py-2 text-sm leading-5 text-left hover:text-black hover:bg-red-600"
+                                    role="menuitem"
+                                    @click="deleteResto(elem.id)"
+                                  >
+                                    <svg
+                                      class="inline-block fill-current h-4 w-4"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      style="vertical-align: -0.125em"
+                                      width="1em"
+                                      height="1em"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 1024 1024"
+                                    >
+                                      <path
+                                        fill="#dc2626"
+                                        d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-200 0H360v-72h304v72z"
+                                      />
+                                    </svg>
+                                    <span class="inline-block pl-2"
+                                      >Supprimer</span
+                                    >
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                       <p
                         class="text-gray-800 dark:text-gray-100 mt-4 mb-2 tracking-normal text-xl lg:text-2xl font-bold"
@@ -161,11 +262,11 @@
                             d="M804.8 673.9H747c-5.6 0-10.9 2.9-13.9 7.7c-12.7 20.1-27.5 38.7-44.5 55.7c-29.3 29.3-63.4 52.3-101.3 68.3c-39.3 16.6-81 25-124 25c-43.1 0-84.8-8.4-124-25c-37.9-16-72-39-101.3-68.3s-52.3-63.4-68.3-101.3c-16.6-39.2-25-80.9-25-124c0-43.1 8.4-84.7 25-124c16-37.9 39-72 68.3-101.3c29.3-29.3 63.4-52.3 101.3-68.3c39.2-16.6 81-25 124-25c43.1 0 84.8 8.4 124 25c37.9 16 72 39 101.3 68.3c17 17 31.8 35.6 44.5 55.7c3 4.8 8.3 7.7 13.9 7.7h57.8c6.9 0 11.3-7.2 8.2-13.3c-65.2-129.7-197.4-214-345-215.7c-216.1-2.7-395.6 174.2-396 390.1C71.6 727.5 246.9 903 463.2 903c149.5 0 283.9-84.6 349.8-215.8c3.1-6.1-1.4-13.3-8.2-13.3z"
                           />
                         </svg>
+                        <span class="mt-2 xl:mt-0 inline-block pr-1"
+                          >{{ elem.open }}h -
+                        </span>
                         <span class="mt-2 xl:mt-0 inline-block"
-                          >Ouverture: {{ elem.open }}h</span
-                        >
-                        <span class="mt-2 xl:mt-0 inline-block"
-                          >Fermeture: {{ elem.closed }}h</span
+                          >{{ elem.closed }}h</span
                         >
                       </p>
 
@@ -191,33 +292,19 @@
                     </div>
 
                     <div
-                      class="px-5 lg:px-5 md:px-10 py-3 lg:py-4 flex flex-row items-center justify-between border-t border-gray-300"
+                      class="px-5 lg:px-5 md:px-10 py-3 lg:py-4 flex justify-around border-t border-gray-300"
                     >
-                      <div class="flex items-center">
-                        <button
-                          class="w-52 text-white bg-red-700 hover:bg-red-500 font-semibold hover:text-white border border-white hover:border-transparent rounded"
-                          @click="editProfil(elem.id)"
-                        >
-                          Modifier
-                        </button>
-                        <button
-                          class="w-52 text-white bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-6 border border-white hover:border-transparent rounded"
-                          @click="deleteResto(elem.id)"
-                        >
-                          Supprimer
-                        </button>
-                        <button
-                          class="w-52 text-white bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-6 border border-white hover:border-transparent rounded"
-                          @click="addMenu(elem.id)"
-                        >
-                          carte
-                        </button>
-                        <button
-                          class="w-52 text-white bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-6 border border-white hover:border-transparent rounded"
-                        >
-                          <a href="/restaurants/command"> commandes clients</a>
-                        </button>
-                      </div>
+                      <button
+                        class="text-black w-56 mt-6 bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-6 hover:border-transparent rounded"
+                        @click="addMenu(elem.id)"
+                      >
+                        carte
+                      </button>
+                      <button
+                        class="text-black w-56 mt-6 bg-red-700 hover:bg-red-500 font-semibold hover:text-white py-2 px-6 hover:border-transparent rounded"
+                      >
+                        <a href="/restaurants/command"> commandes clients</a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -308,5 +395,10 @@ export default {
   },
 };
 </script>
-<style></style>
-```
+<style>
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  visibility: visible;
+}
+</style>

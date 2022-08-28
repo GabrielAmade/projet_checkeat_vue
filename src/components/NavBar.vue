@@ -295,7 +295,7 @@
       >
     </nav>
 
-    <nav v-if="token" class="pt-3">
+    <nav v-if="token" class="pt-6">
       <p class="inline-block align-center justify-center">
         Bonjour {{ firstname }} {{ lastname }}
       </p>
@@ -320,11 +320,12 @@
       </button> -->
 
       <div class="inline-block">
-        <div class="dropdown relative px-2 transition">
+        <div class="dropdown px-2">
           <!-- Dropdown toggle button -->
           <button
+            tabindex="0"
             @click="show = !show"
-            class="relative z-10 block m-2 overflow-hidden focus:outline-none leading-loose align-middle px-4 py-1 rounded cursor-pointer text-sm bg-red-600 text-black hover:bg-gray-100 hover:text-red-600"
+            class="relative z-10 block overflow-hidden focus:outline-none leading-loose align-middle px-4 py-1 rounded cursor-pointer text-sm bg-black text-red-600 hover:bg-red-600 hover:text-black transition duration-500"
           >
             <span class="mr-1">Options</span
             ><svg
@@ -340,33 +341,78 @@
           <button
             v-if="show"
             @click="show = false"
-            tabindex="-1"
+            tabindex="0"
             class="fixed top-0 inset-0 h-full w-full bg-black opacity-0 cursor-default"
           ></button>
 
           <!-- Dropdown menu -->
           <div
             v-show="show"
-            class="absolute right-0 py-2 mt-2 bg-black border-2 border-red-700 rounded-md shadow-xl w-44"
+            class="absolute right-0 py-2 mt-2 bg-black border-2 border-red-700 rounded-md shadow-xl w-44 transition duration-500"
           >
             <router-link
               to="/restaurateurs/dashboard"
-              class="block px-4 py-2 text-sm text-red-600 hover:bg-red-600 hover:text-indigo-100"
+              class="block px-4 py-2 text-sm text-red-600 hover:bg-red-600 hover:text-black"
             >
+              <svg
+                class="inline-block fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: -0.125em"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M10 13H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1Zm-1 6H5v-4h4ZM20 3h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Zm-1 6h-4V5h4Zm1 7h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2ZM10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1ZM9 9H5V5h4Z"
+                />
+              </svg>
               Tableau de bord
             </router-link>
             <router-link
               to="/restaurateurs/profil"
-              class="block px-4 py-2 text-sm text-red-600 hover:bg-red-600 hover:text-indigo-100"
-            >
+              class="block px-4 py-2 text-sm text-red-600 hover:bg-red-600 hover:text-black"
+              ><svg
+                class="inline-block fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: -0.125em"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  fill="none"
+                  d="M8.007 24.93A4.996 4.996 0 0 1 13 20h6a4.996 4.996 0 0 1 4.993 4.93a11.94 11.94 0 0 1-15.986 0ZM20.5 12.5A4.5 4.5 0 1 1 16 8a4.5 4.5 0 0 1 4.5 4.5Z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M26.749 24.93A13.99 13.99 0 1 0 2 16a13.899 13.899 0 0 0 3.251 8.93l-.02.017c.07.084.15.156.222.239c.09.103.187.2.28.3c.28.304.568.596.87.87c.092.084.187.162.28.242c.32.276.649.538.99.782c.044.03.084.069.128.1v-.012a13.901 13.901 0 0 0 16 0v.012c.044-.031.083-.07.128-.1c.34-.245.67-.506.99-.782c.093-.08.188-.159.28-.242c.302-.275.59-.566.87-.87c.093-.1.189-.197.28-.3c.071-.083.152-.155.222-.24ZM16 8a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 16 8ZM8.007 24.93A4.996 4.996 0 0 1 13 20h6a4.996 4.996 0 0 1 4.993 4.93a11.94 11.94 0 0 1-15.986 0Z"
+                />
+              </svg>
               Profil
             </router-link>
 
             <bouton
               type="button"
               @click="logout"
-              class="block cursor-pointer w-auto px-4 py-2 text-sm text-red-600 hover:bg-red-600 hover:text-indigo-100"
+              class="block cursor-pointer w-auto px-4 py-2 text-sm text-red-600 hover:bg-red-600 hover:text-black"
             >
+              <svg
+                class="inline-block fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: -0.125em"
+                width="32"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10zM7 11V8l-5 4l5 4v-3h8v-2H7z"
+                />
+              </svg>
               Deconnexion
             </bouton>
           </div>

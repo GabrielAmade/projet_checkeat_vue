@@ -25,31 +25,50 @@
     >
       Cherchez votre restaurant
     </button> -->
-
     <a
       @click="getRestaurants()"
       href="#_"
-      class="relative px-5 py-3 overflow-hidden font-black text-2xl text-gray-900 bg-red-600 border border-gray-100 rounded-lg shadow-inner group animate-bounce"
+      class="w-96 cursor-pointer relative inline-flex items-center justify-center p-4 px-12 py-6 overflow-hidden font-black text-red-600 transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group"
     >
       <span
-        class="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-200 group-hover:w-full ease"
-      ></span>
+        class="absolute inset-0 flex items-center justify-center w-full h-full text-black duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease"
+      >
+        <p class="pr-2 text-2xl font-black">C'est parti</p>
+
+        <svg
+          class="inline-block h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          style="vertical-align: -0.125em"
+          width="1em"
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 48 48"
+        >
+          <mask id="svgIDa">
+            <g
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="4"
+            >
+              <path d="m34 28l10-4" />
+              <path
+                fill="#fff"
+                d="M4 28h30l-.439 3.802A7 7 0 0 1 26.607 38H11.393a7 7 0 0 1-6.954-6.198L4 28Z"
+              />
+              <path d="M19 10v10m-8-8v6m16-6v6" />
+            </g>
+          </mask>
+          <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#svgIDa)" />
+        </svg>
+      </span>
       <span
-        class="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-200 group-hover:w-full ease"
-      ></span>
-      <span
-        class="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-200 group-hover:h-full ease"
-      ></span>
-      <span
-        class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-600 group-hover:h-full ease"
-      ></span>
-      <span
-        class="absolute inset-0 w-full h-full duration-300 delay-300 bg-black opacity-0 group-hover:opacity-100"
-      ></span>
-      <span
-        class="relative transition-colors duration-300 delay-200 group-hover:text-red-600 ease"
+        class="absolute text-2xl flex items-center justify-center w-full h-full text-red-600 transition-all duration-300 transform group-hover:translate-x-full ease"
         >Cherchez votre restaurant</span
       >
+      <span class="relative invisible">Cherchez votre restaurant</span>
+      <svg-icon :fa-icon="faCoffee" :size="96" flip="horizontal"></svg-icon>
     </a>
   </div>
 </template>
