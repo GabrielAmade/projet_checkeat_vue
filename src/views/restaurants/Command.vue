@@ -97,7 +97,7 @@
                 {{ elem.name }}
               </td>
               <td class="py-4 px-6">{{ elem.price }} €</td>
-              <td class="py-4 px-6">{{ elem.total }} %</td>
+              <td class="py-4 px-6">{{ elem.total }} €</td>
               <td class="py-4 px-6 font-black text-base text-red-600">
                 {{ elem.status }}
               </td>
@@ -105,7 +105,7 @@
               <td>
                 <button
                   class="font-medium text-blue-600 dark:text-red-600 hover:underline"
-                  @click="deleteMenu(key, elem.id)"
+                  @click="erase(key, elem.id)"
                 >
                   Supprimer
                 </button>
