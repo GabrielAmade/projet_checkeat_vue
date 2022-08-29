@@ -108,7 +108,7 @@
       </div>
 
       <div class="list">
-        <h2 class="text-red-600 text-center text-3xl p-4">La Carte</h2>
+        <h2 class="text-red-600 text-center text-3xl p-4 m-6">La Carte</h2>
         <ul>
           <li>
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -116,7 +116,7 @@
                 class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
               >
                 <thead
-                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
                 >
                   <tr>
                     <th scope="col" class="py-3 px-6">Categorie</th>
@@ -132,22 +132,181 @@
                 <tbody v-for="task in tasks" :key="task.id">
                   <tr
                     v-if="task.category === 'entree'"
-                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
                   >
                     <td
                       scope="row"
-                      class="py-4 px-6 font-medium text-red-600 whitespace-nowrap dark:text-white"
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
                     >
                       {{ task.category }}
                     </td>
-                    <td class="py-4 px-6 text-red-600">{{ task.name }}</td>
+                    <td
+                      class="py-4 px-6 text-red-600 font-black italic text-base"
+                    >
+                      {{ task.name }}
+                    </td>
                     <td class="py-4 px-6">{{ task.priceHt }} €</td>
                     <td class="py-4 px-6">{{ task.tva }} %</td>
-                    <td class="py-4 px-6">{{ task.priceTtc }} €</td>
+                    <td class="py-4 px-6 font-black text-base text-red-600">
+                      {{ task.priceTtc }} €
+                    </td>
                     <td class="py-4 px-6 text-right">
                       <a
                         href="#"
-                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        >Edit</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-4">
+              <table
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
+                >
+                  <tr>
+                    <th scope="col" class="py-3 px-6">Categorie</th>
+                    <th scope="col" class="py-3 px-6">Nom du Produit</th>
+                    <th scope="col" class="py-3 px-6">Prix Hors taxe</th>
+                    <th scope="col" class="py-3 px-6">TVA</th>
+                    <th scope="col" class="py-3 px-6">Prix TTC</th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Edit</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody v-for="task in tasks" :key="task.id">
+                  <tr
+                    v-if="task.category === 'plat'"
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
+                  >
+                    <td
+                      scope="row"
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
+                    >
+                      {{ task.category }}
+                    </td>
+                    <td
+                      class="py-4 px-6 text-red-600 font-black italic text-base"
+                    >
+                      {{ task.name }}
+                    </td>
+                    <td class="py-4 px-6">{{ task.priceHt }} €</td>
+                    <td class="py-4 px-6">{{ task.tva }} %</td>
+                    <td class="py-4 px-6 font-black text-base text-red-600">
+                      {{ task.priceTtc }} €
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        >Edit</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-4">
+              <table
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
+                >
+                  <tr>
+                    <th scope="col" class="py-3 px-6">Categorie</th>
+                    <th scope="col" class="py-3 px-6">Nom du Produit</th>
+                    <th scope="col" class="py-3 px-6">Prix Hors taxe</th>
+                    <th scope="col" class="py-3 px-6">TVA</th>
+                    <th scope="col" class="py-3 px-6">Prix TTC</th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Edit</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody v-for="task in tasks" :key="task.id">
+                  <tr
+                    v-if="task.category === 'dessert'"
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
+                  >
+                    <td
+                      scope="row"
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
+                    >
+                      {{ task.category }}
+                    </td>
+                    <td
+                      class="py-4 px-6 text-red-600 font-black italic text-base"
+                    >
+                      {{ task.name }}
+                    </td>
+                    <td class="py-4 px-6">{{ task.priceHt }} €</td>
+                    <td class="py-4 px-6">{{ task.tva }} %</td>
+                    <td class="py-4 px-6 font-black text-base text-red-600">
+                      {{ task.priceTtc }} €
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        >Edit</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-4">
+              <table
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
+                >
+                  <tr>
+                    <th scope="col" class="py-3 px-6">Categorie</th>
+                    <th scope="col" class="py-3 px-6">Nom du Produit</th>
+                    <th scope="col" class="py-3 px-6">Prix Hors taxe</th>
+                    <th scope="col" class="py-3 px-6">TVA</th>
+                    <th scope="col" class="py-3 px-6">Prix TTC</th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Edit</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody v-for="task in tasks" :key="task.id">
+                  <tr
+                    v-if="task.category === 'boisson'"
+                    class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
+                  >
+                    <td
+                      scope="row"
+                      class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
+                    >
+                      {{ task.category }}
+                    </td>
+                    <td
+                      class="py-4 px-6 text-red-600 font-black italic text-base"
+                    >
+                      {{ task.name }}
+                    </td>
+                    <td class="py-4 px-6">{{ task.priceHt }} €</td>
+                    <td class="py-4 px-6">{{ task.tva }} %</td>
+                    <td class="py-4 px-6 font-black text-base text-red-600">
+                      {{ task.priceTtc }} €
+                    </td>
+                    <td class="py-4 px-6 text-right">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
                         >Edit</a
                       >
                     </td>
