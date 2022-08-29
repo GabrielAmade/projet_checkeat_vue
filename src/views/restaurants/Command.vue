@@ -16,12 +16,42 @@
       >
         <div v-for="(elem, key) in ordered" :key="elem.id">
           <div v-if="elem.status === 'En cours'">
-            <div class="text-red-600">
-              <p>{{ elem.name }}</p>
-              <p>Prix du plat : {{ elem.price }}</p>
-              <p>Total : {{ elem.total }}</p>
-              <p>Numéro de commande : {{ elem.id_command }}</p>
-              <button @click="erase(key, elem.id)">Supprimer</button>
+            <div class="flex flex-col bg-white rounded overflow-hidden shadow">
+              <div class="px-3 py-2">
+                <div class="flex justify-between">
+                  <p class="uppercase tracking-wider font-bold text-teal-500">
+                    {{ elem.name }}
+                  </p>
+                  <p class="flex flex-col items-end">
+                    <span class="text-indigo-500"
+                      >N°: {{ elem.id_command }}</span
+                    >
+                  </p>
+                </div>
+
+                <div class="mt-3 flex justify-between">
+                  <div class="text-sm text-gray-700">
+                    <p class="text-lg font-bold text-teal-500">
+                      Prix: {{ elem.price }} €
+                    </p>
+                  </div>
+
+                  <div class="text-right text-sm text-gray-700">
+                    <p class="text-lg font-bold text-red-500">
+                      Total: {{ elem.total }} €
+                    </p>
+                  </div>
+                </div>
+                <div class="px-3 py-2 flex items-end bg-gray-300">
+                  <button
+                    type="button"
+                    class="px-2 py-1 bg-teal-500 text-white rounded hover:bg-teal-400"
+                    @click="erase(key, elem.id)"
+                  >
+                    Supprimer
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
