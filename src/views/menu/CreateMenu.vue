@@ -125,7 +125,10 @@
                     <th scope="col" class="py-3 px-6">TVA</th>
                     <th scope="col" class="py-3 px-6">Prix TTC</th>
                     <th scope="col" class="py-3 px-6">
-                      <span class="sr-only">Edit</span>
+                      <span class="sr-only">Modifier</span>
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Supprimer</span>
                     </th>
                   </tr>
                 </thead>
@@ -157,6 +160,14 @@
                         >Edit</a
                       >
                     </td>
+                    <td>
+                      <button
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        @click="deleteMenu(task.id)"
+                      >
+                        Supprimer
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -177,6 +188,9 @@
                     <th scope="col" class="py-3 px-6">Prix TTC</th>
                     <th scope="col" class="py-3 px-6">
                       <span class="sr-only">Edit</span>
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Supprimer</span>
                     </th>
                   </tr>
                 </thead>
@@ -208,6 +222,14 @@
                         >Edit</a
                       >
                     </td>
+                    <td>
+                      <button
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        @click="deleteMenu(task.id)"
+                      >
+                        Supprimer
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -228,6 +250,9 @@
                     <th scope="col" class="py-3 px-6">Prix TTC</th>
                     <th scope="col" class="py-3 px-6">
                       <span class="sr-only">Edit</span>
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Supprimer</span>
                     </th>
                   </tr>
                 </thead>
@@ -259,6 +284,14 @@
                         >Edit</a
                       >
                     </td>
+                    <td>
+                      <button
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        @click="deleteMenu(task.id)"
+                      >
+                        Supprimer
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -278,7 +311,10 @@
                     <th scope="col" class="py-3 px-6">TVA</th>
                     <th scope="col" class="py-3 px-6">Prix TTC</th>
                     <th scope="col" class="py-3 px-6">
-                      <span class="sr-only">Edit</span>
+                      <span class="sr-only">Modifer</span>
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                      <span class="sr-only">Supprimer</span>
                     </th>
                   </tr>
                 </thead>
@@ -309,6 +345,14 @@
                         class="font-medium text-blue-600 dark:text-red-600 hover:underline"
                         >Edit</a
                       >
+                    </td>
+                    <td>
+                      <button
+                        class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                        @click="deleteMenu(task.id)"
+                      >
+                        Supprimer
+                      </button>
                     </td>
                   </tr>
                 </tbody>
@@ -391,14 +435,17 @@ export default {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          // Authorization: "Bearer " + localStorage.getItem("token"),
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       };
-      const response = await fetch("http://127.0.0.1:8000/api/menu/", options);
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/menu/" + id,
+        options
+      );
       const data = await response.json();
 
       if (data.message == true) {
-        this.$router.push("/menu/delete");
+        setTimeout(window.location.reload(), 5000);
       }
     },
   },

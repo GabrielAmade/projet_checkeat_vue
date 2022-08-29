@@ -11,7 +11,7 @@
       <div class="text-center m-4">
         <h1 class="text-red-600 text-2xl font-black">Commandes des clients</h1>
       </div>
-      <div
+      <!-- <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10"
       >
         <div v-for="(elem, key) in ordered" :key="elem.id">
@@ -42,6 +42,13 @@
                     </p>
                   </div>
                 </div>
+
+                <div class="text-right text-sm text-gray-700">
+                  <p class="text-lg font-bold text-red-500">
+                    Statut: {{ elem.status }}
+                  </p>
+                </div>
+
                 <div class="px-3 py-2 flex items-end bg-gray-300">
                   <button
                     type="button"
@@ -55,6 +62,57 @@
             </div>
           </div>
         </div>
+      </div> -->
+      <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <table
+          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-red-600 dark:text-black"
+          >
+            <tr>
+              <th scope="col" class="py-3 px-6">Numero de commande</th>
+              <th scope="col" class="py-3 px-6">Nom du Produit</th>
+              <th scope="col" class="py-3 px-6">Prix du produit</th>
+              <th scope="col" class="py-3 px-6">Prix Total</th>
+              <th scope="col" class="py-3 px-6">Statut de la commande</th>
+
+              <th scope="col" class="py-3 px-6">
+                <span class="sr-only">Supprimer</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody v-for="(elem, key) in ordered" :key="elem.id">
+            <tr
+              v-if="elem.status === 'En cours'"
+              class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900"
+            >
+              <td
+                scope="row"
+                class="py-4 px-6 font-black text-base uppercase text-red-600 whitespace-nowrap dark:text-white"
+              >
+                {{ elem.id_command }}
+              </td>
+              <td class="py-4 px-6 text-red-600 font-black italic text-base">
+                {{ elem.name }}
+              </td>
+              <td class="py-4 px-6">{{ elem.price }} €</td>
+              <td class="py-4 px-6">{{ elem.total }} %</td>
+              <td class="py-4 px-6 font-black text-base text-red-600">
+                {{ elem.status }}
+              </td>
+
+              <td>
+                <button
+                  class="font-medium text-blue-600 dark:text-red-600 hover:underline"
+                  @click="deleteMenu(key, elem.id)"
+                >
+                  Supprimer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
