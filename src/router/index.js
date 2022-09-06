@@ -18,6 +18,7 @@ import MenuDelete from "../views/menu/MenuDelete.vue";
 import ListeResto from "../views/guests/ListeResto.vue";
 import ShowMenu from "../views/guests/ShowMenu.vue";
 import Command from "../views/restaurants/Command.vue";
+import Payment from "../views/guests/Payment.vue";
 import App from "@/App.vue";
 
 const routes = [
@@ -143,6 +144,12 @@ const routes = [
     path: "/guests/showmenu",
     name: "ShowMenu",
     component: ShowMenu,
+  },
+
+  {
+    path: "/guests/payment",
+    name: "Payment",
+    component: Payment,
   },
 ];
 

@@ -297,7 +297,8 @@ export default {
         console.log(data.message);
 
         this.message = data.message;
-        setTimeout(window.location.reload(), 5000);
+        this.$router.push("/guests/Payment");
+        // setTimeout(window.location.reload(), 5000);
       }
     },
     addEntree(entree, value, id) {

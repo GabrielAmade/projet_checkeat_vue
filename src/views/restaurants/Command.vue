@@ -102,6 +102,34 @@
                 {{ elem.status }}
               </td>
 
+              <!-- <td>
+                <div class="w-3/4 mx-auto mt-4">
+                  <button
+                    class="flex w-11 h-6 bg-gray-300 rounded-full border-2 border-transparent focus:outline-none"
+                  >
+                    <span
+                      class="w-5 h-5 bg-white shadow rounded-full transform translate ease-in-out duration-300"
+                    ></span>
+                  </button>
+                </div>
+                <div
+                  id="modal"
+                  class="flex justify-center items-center bg-black bg-opacity-50 absolute inset-0"
+                >
+                  <div
+                    class="w-1/3 bg-white rounded shadow p-2 flex justify-between items-center"
+                  >
+                    <div>Warning: this is a message</div>
+                    <div>
+                      <i
+                        id="js-close-modal"
+                        class="fas fa-times text-gray-700 cursor-pointer"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </td> -->
+
               <td>
                 <button
                   class="font-medium text-blue-600 dark:text-red-600 hover:underline"
@@ -131,6 +159,33 @@ export default {
       status: "Terminé",
     };
   },
+
+  //   methods: {
+  //   const button = document.querySelector("button");
+  //   const span = document.querySelector("span");
+  //   const modal = document.querySelector("#modal");
+  //   const closeModal = document.querySelector("#js-close-modal");
+
+  //   button.addEventListener("click", () => {
+  //     if (span.classList.contains("translate-x-0")) {
+  //       span.classList.remove("translate-x-0");
+  //       span.classList.add("translate-x-5");
+  //       button.classList.add("bg-green-300");
+  //       modal.classList.remove("hidden");
+  //     } else {
+  //       span.classList.remove("translate-x-5");
+  //       span.classList.add("translate-x-0");
+  //       button.classList.remove("bg-green-300");
+  //     }
+  //   });
+
+  //   closeModal.addEventListener("click", () => {
+  //     modal.classList.add("hidden");
+  //     button.classList.remove("bg-green-300");
+  //     span.classList.remove("translate-x-5");
+  //     span.classList.add("translate-x-0");
+  //   });
+  // }
 
   async mounted() {
     const options = {
