@@ -297,8 +297,10 @@ export default {
         console.log(data.message);
 
         this.message = data.message;
-        this.$router.push("/guests/Payment");
-        // setTimeout(window.location.reload(), 5000);
+
+        setTimeout(() => {
+          window.location.href = "/guests/Payment";
+        }, 3000);
       }
     },
     addEntree(entree, value, id) {

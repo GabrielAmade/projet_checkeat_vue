@@ -76,22 +76,23 @@
             <h2 class="text-lg font-bold text-red-600">Votre commande</h2>
             <div class="bg-white rounded mt-4 shadow-lg py-6">
               <div class="px-8">
-                <div class="flex items-end">
-                  <span>Nom du plat</span>
-                  <span class="text-sm ml-auto font-semibold">Prix</span>
+                <div
+                  class="flex items-end"
+                  v-for="elem in orderedpayment"
+                  :key="elem.id"
+                >
+                  <span class="text-red-600">{{ elem.name }}</span>
+
+                  <span class="text-sm ml-auto font-semibold pr-1">{{
+                    elem.price
+                  }}</span>
                   <span class="text-xs text-gray-500 mb-px">€</span>
-                </div>
-              </div>
-              <div class="px-8 mt-4">
-                <div class="flex items-end justify-between">
-                  <span class="text-sm font-semibold">TVA</span>
-                  <span class="text-sm text-gray-500 mb-px">10%</span>
                 </div>
               </div>
               <div class="px-8 mt-4 border-t pt-4">
                 <div class="flex items-end justify-between">
-                  <span class="font-semibold">Total</span>
-                  <span class="font-semibold"></span>
+                  <span class="font-semibold">Total : </span>
+                  <span class="font-semibold">{{ total }} €</span>
                 </div>
               </div>
               <div class="flex items-center px-8 mt-8">
@@ -102,6 +103,7 @@
               </div>
               <div class="flex flex-col px-8 pt-4">
                 <button
+                  @click="validateOrder"
                   class="flex items-center justify-center bg-red-600 text-sm font-black w-full h-10 rounded text-black hover:bg-red-700"
                 >
                   Valider le paiement
@@ -119,25 +121,16 @@
 </template>
 
 <script>
-const idRestaurantMenu = localStorage.getItem("id_restaurant_menu");
-
 const idCommand = localStorage.getItem("idCommand");
 
 export default {
   data() {
     return {
-      menu: [],
-      id_restaurant: idRestaurantMenu,
-      command: [],
-      price: [],
-      total: 0,
-      id: 0,
-      nameOrdered: "",
-      priceOrdered: "",
-      totalOrdered: "",
-      message: "",
-      id_command: idCommand,
-      status: "En cours",
+      orderedpayment: [],
+      name: "",
+      priceTtc: "",
+      total: "",
+      idCommand: idCommand,
     };
   },
   async mounted() {
@@ -150,16 +143,29 @@ export default {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/guestmenu/",
+      "http://127.0.0.1:8000/api/payment/" + idCommand,
       options
     );
 
     const data = await response.json();
 
-    // console.log(this.menu);
-    const menu = data.menu;
+    this.orderedpayment = data.orderedpayment;
 
-    this.totalOrdered = menu.totalOrdered;
+    for (let i in this.orderedpayment) {
+      const orderTotal = this.orderedpayment[i];
+
+      this.total = orderTotal.total;
+
+      console.log(this.total);
+    }
+    console.log(this.orderedpayment);
+    // this.name = data.orderedpayment.name;
+    // this.priceTtc = data.orderedpayment.price;
+
+    // this.orderedpayment = payment;
+
+    // console.log(this.orderedpayment);
+    // console.log(payment);
   },
 };
 </script>
