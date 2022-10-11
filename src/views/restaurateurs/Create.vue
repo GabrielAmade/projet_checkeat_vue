@@ -1,29 +1,25 @@
 <template>
   <!-- Formulaire Inscription Restaurateur -->
+
   <div
     class="h-screen w-screen flex justify-center align-center pt-1 bg-black bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1543007631-283050bb3e8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
-    "
-  >
+    ">
     <div
       class="bg-gray-100 text-red-600 border-2 border-red-600 rounded-3xl shadow-xl w-full overflow-hidden"
-      style="max-width: 1000px"
-    >
+      style="max-width: 1000px">
       <div class="md:flex w-full">
         <div
-          class="hidden md:block w-1/2 bg-red-500 bg-cover bg-no-repeat bg-center"
-        >
+          class="hidden md:block w-1/2 bg-red-500 bg-cover bg-no-repeat bg-center">
           <video
             autoplay
             loop
             muted
-            class="z-10 w-auto min-h-full object-cover"
-          >
+            class="z-10 w-auto min-h-full object-cover">
             <source
               src="https://media.vidfy.com/public/32143/conversions/import_61408255372851.01740089-video-preview.mp4?v=1631617752"
-              type="video/mp4"
-            />
+              type="video/mp4" />
           </video>
         </div>
         <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
@@ -43,11 +39,9 @@
 
                 <div class="flex">
                   <div
-                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
-                  >
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                     <i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"
-                    ></i>
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
                     type="text"
@@ -55,8 +49,7 @@
                     id="lastname"
                     v-model="lastname"
                     placeholder="Nom"
-                    required
-                  />
+                    required />
                 </div>
               </div>
 
@@ -66,11 +59,9 @@
                 >
                 <div class="flex">
                   <div
-                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
-                  >
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                     <i
-                      class="mdi mdi-account-outline text-gray-400 text-lg"
-                    ></i>
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
                     type="text"
@@ -78,8 +69,7 @@
                     id="firstname"
                     v-model="firstname"
                     placeholder="Prénom"
-                    required
-                  />
+                    required />
                 </div>
               </div>
             </div>
@@ -96,8 +86,7 @@
                     id="siret"
                     v-model="siret"
                     placeholder="Numéro Siret"
-                    required
-                  />
+                    required />
                 </div>
               </div>
             </div>
@@ -109,8 +98,7 @@
                 >
                 <div class="flex">
                   <div
-                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
-                  >
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                     <i class="mdi mdi-email-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
@@ -119,8 +107,7 @@
                     id="email"
                     v-model="email"
                     placeholder="Votre email"
-                    required
-                  />
+                    required />
                 </div>
               </div>
             </div>
@@ -132,8 +119,7 @@
                 >
                 <div class="flex">
                   <div
-                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
-                  >
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                     <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
@@ -142,8 +128,7 @@
                     placeholder="Télephone"
                     id="phone"
                     v-model="phone"
-                    required
-                  />
+                    required />
                 </div>
               </div>
             </div>
@@ -155,8 +140,7 @@
                 >
                 <div class="flex">
                   <div
-                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"
-                  >
+                    class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                     <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i>
                   </div>
                   <input
@@ -165,8 +149,7 @@
                     placeholder="************"
                     id="password"
                     v-model="password"
-                    required
-                  />
+                    required />
                 </div>
               </div>
             </div>
@@ -176,8 +159,7 @@
                 <input
                   class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-700 focus:bg-red-700 text-white rounded-lg px-3 py-3 font-semibold"
                   type="submit"
-                  value="Valider Inscription"
-                />
+                  value="Valider Inscription" />
               </div>
             </div>
           </form>

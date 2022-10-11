@@ -4,15 +4,13 @@
     class="h-screen bg-gray-500 flex-col flex items-center justify-around bg-fixed bg-no-repeat bg-center bg-cover"
     style="
       background-image: url('https://images.unsplash.com/photo-1579027989536-b7b1f875659b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80');
-    "
-  >
+    ">
     <h1 class="font-extrabold text-8xl text-red-600">
       Check'<span class="text-gray-100 italic">EAT</span>
     </h1>
 
     <div
-      class="title text-gray-200 font-black text-5xl p-2 drop-shadow-lg shadow-black"
-    >
+      class="title text-gray-200 font-black text-5xl p-2 drop-shadow-lg shadow-black sm:text-center">
       La plateforme de vos restaurants préférés
     </div>
     <!-- <h3 class="text-red-600 font-black text-2xl underline mt-10 pt-10">
@@ -28,11 +26,9 @@
     <a
       @click="getRestaurants()"
       href="#_"
-      class="w-96 cursor-pointer relative inline-flex items-center justify-center p-4 px-12 py-6 overflow-hidden font-black text-red-600 transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group"
-    >
+      class="w-96 cursor-pointer relative inline-flex items-center justify-center p-4 px-12 py-6 overflow-hidden font-black text-red-600 transition duration-300 ease-out border-2 border-red-600 rounded-full shadow-md group">
       <span
-        class="absolute inset-0 flex items-center justify-center w-full h-full text-black duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease"
-      >
+        class="absolute inset-0 flex items-center justify-center w-full h-full text-black duration-300 -translate-x-full bg-red-600 group-hover:translate-x-0 ease">
         <p class="pr-2 text-2xl font-black">C'est parti</p>
 
         <svg
@@ -42,21 +38,18 @@
           width="1em"
           height="1em"
           preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 48 48"
-        >
+          viewBox="0 0 48 48">
           <mask id="svgIDa">
             <g
               fill="none"
               stroke="#fff"
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="4"
-            >
+              stroke-width="4">
               <path d="m34 28l10-4" />
               <path
                 fill="#fff"
-                d="M4 28h30l-.439 3.802A7 7 0 0 1 26.607 38H11.393a7 7 0 0 1-6.954-6.198L4 28Z"
-              />
+                d="M4 28h30l-.439 3.802A7 7 0 0 1 26.607 38H11.393a7 7 0 0 1-6.954-6.198L4 28Z" />
               <path d="M19 10v10m-8-8v6m16-6v6" />
             </g>
           </mask>
